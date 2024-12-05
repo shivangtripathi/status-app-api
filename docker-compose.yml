@@ -1,0 +1,52 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: status-app-api
+    develop:
+      watch:
+        - action: sync
+          path: ./src
+          target: /app/src
+          ignore:
+            - node_modules/
+            - dist/
+            - .git/
+            - .env
+        - action: rebuild
+          path: package.json
+    environment:
+      DB_HOST: db
+      DB_USER: root
+      DB_PASSWORD: password
+      DB_NAME: status-app
+      JWT_SECRET: 8f4c9d6e2b7a1f3e5d8c9b4a7f2e1d6c3b8a5f9e2d7c4b1a6f3e8d5c2b9a4f7
+    depends_on:
+      - db
+    ports:
+      - 5001:5000
+    networks:
+      - app-network
+
+  db:
+    image: mysql:8.0
+    container_name: status-app-db
+    environment:
+      MYSQL_ROOT_PASSWORD: password # Set a root password
+      MYSQL_DATABASE: status-app # Create a database on startup
+      MYSQL_PASSWORD: password
+      DB_HOST: db
+      DB_USER: root
+      DB_PASSWORD: password
+      DB_NAME: status-app
+    ports:
+      - 3301:3301
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

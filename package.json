@@ -1,0 +1,45 @@
+{
+  "name": "status-page-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migration:generate": "npm run typeorm -- -p src/db/data-source.ts migration:generate src/db/migrations/$npm_config_name",
+    "start:dev": "tsc-watch --p tsconfig.json --onSuccess 'node ./dist/server.js'",
+    "start": "node dist/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "express-validator": "^7.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.8.3",
+    "mysql2": "^3.11.5",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0",
+    "reflect-metadata": "^0.2.2",
+    "tsc-watch": "^6.2.1",
+    "zod": "^3.23.8",
+    "socket.io": "^4.7.1"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/body-parser": "^1.19.5",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/express-validator": "^2.20.33",
+    "@types/jsonwebtoken": "^9.0.7",
+    "@types/mongoose": "^5.11.96",
+    "@types/node": "^22.10.1",
+    "@types/passport": "^1.0.17",
+    "@types/passport-google-oauth20": "^2.0.16",
+    "typeorm": "^0.3.20",
+    "typescript": "^5.7.2"
+  }
+}
