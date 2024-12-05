@@ -25,7 +25,7 @@ Protected routes for administrative operations (requires authentication)
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone git@github.com:shivangtripathi/status-app-api.git
    cd status-page-api
    ```
 
