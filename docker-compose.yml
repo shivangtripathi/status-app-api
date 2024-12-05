@@ -43,7 +43,7 @@ services:
       DB_PASSWORD: password
       DB_NAME: status-app
     ports:
-      - 3301:3301
+      - 3306:3306
     networks:
       - app-network
 

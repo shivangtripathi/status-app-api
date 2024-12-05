@@ -37,7 +37,7 @@ temp/
 # Docker
 .docker/
 docker-compose.override.yml
-
+git remote add origin git@github.com:shivangtripathi/status-app-api.git
 # TypeScript
 *.tsbuildinfo
 

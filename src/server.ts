@@ -6,7 +6,6 @@ import adminRoutes from "./routes/admin";
 import publicRoutes from "./routes/public";
 import { initializeSocket } from './socket';
 import http from "http";
-import { Server } from "socket.io";
 
 // Initialize the database and start the server
 AppDataSource.initialize()

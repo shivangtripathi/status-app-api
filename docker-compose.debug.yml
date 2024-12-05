@@ -11,7 +11,7 @@ services:
       DB_USER: root
       DB_PASSWORD: password
       DB_NAME: status-app
-      JWT_SECRET: 8f4c9d6e2b7a1f3e5d8c9b4a7f2e1d6c3b8a5f9e2d7c4b1a6f3e8d5c2b9a4f7
+      JWT_SECRET: JWT_SECRET
       NODE_ENV: development
     depends_on:
       - db
